@@ -1,2 +1,43 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<h1>Books</h1>
+
+
+<table>
+  <thead>
+   <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th colspan="3"></th>
+   </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+     <td>リーダブルコード</td>
+     <td>より良いコードを書くためのシンプルで実践的なテクニック</td>
+     <td>
+       <a class="show_149100" href="/books/149100">Show</a>
+     </td>
+     <td>
+       <a class="edit_149100" href="/books/149100/edit">Edit</a>
+     </td>
+     <td>
+       <a date-confirm="Are you sure?" class="destroy_149100" rel="nofollow" date-method="delete" href="/books/149100">Destroy</a>
+     </td>
+    </tr>
+    
+  
+  </tbody>
+</table>
+ 
+ 
+
+<h2>New Book</h2>
+<%= form_with model: @book, url: '/show', method: :post do |f| %>
+ <h4>Title</h4>
+ <%= f.text_field :title %>
+ 
+ <h4>Body</h4>
+ <%= f.text_area :body %>
+ 
+ <%= f.submit 'Create Book' %>
+<% end %> 
